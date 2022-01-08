@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/allNewsFragment">
+
+    <fragment
+        android:id="@+id/allNewsFragment"
+        android:name="den.project.newsapp.presentation.fragments.AllNewsFragment"
+        android:label="AllNewsFragment" >
+        <action
+            android:id="@+id/action_allNewsFragment_to_singleNewsFragment"
+            app:destination="@id/singleNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsFragment"
+        android:name="den.project.newsapp.presentation.fragments.SearchNewsFragment"
+        android:label="SearchNewsFragment" >
+        <action
+            android:id="@+id/action_searchNewsFragment_to_singleNewsFragment"
+            app:destination="@id/singleNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteNewsFragment"
+        android:name="den.project.newsapp.presentation.fragments.FavoriteNewsFragment"
+        android:label="FavoriteNewsFragment" >
+        <action
+            android:id="@+id/action_favoriteNewsFragment_to_singleNewsFragment"
+            app:destination="@id/singleNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleNewsFragment"
+        android:name="den.project.newsapp.presentation.fragments.SingleNewsFragment"
+        android:label="SingleNewsFragment" />
+</navigation>
