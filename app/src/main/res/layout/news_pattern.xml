@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +21,23 @@
             android:layout_height="match_parent"
             android:background="@color/light_gray">
 
+            <TextView
+                android:id="@+id/titleNews"
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="title news"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageNews"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imageNews"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/teal_200" />
+
             <ImageView
                 android:id="@+id/imageNews"
                 android:layout_width="match_parent"
@@ -31,26 +48,9 @@
                 android:foregroundGravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleNews"
                 tools:background="@color/teal_200"
                 tools:src="@drawable/ic_image_news" />
-
-            <TextView
-                android:id="@+id/titleNews"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="title news"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/imageNews"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/imageNews"
-                app:layout_constraintTop_toBottomOf="@+id/imageNews"
-                tools:background="@color/teal_200" />
 
             <TextView
                 android:id="@+id/source_news"
@@ -60,10 +60,10 @@
                 android:gravity="center"
                 android:text="source news"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/imageNews"
                 app:layout_constraintStart_toStartOf="@id/imageNews"
-                app:layout_constraintTop_toBottomOf="@+id/titleNews"
+                app:layout_constraintTop_toBottomOf="@+id/imageNews"
                 tools:background="@color/teal_200" />
 
             <TextView
@@ -72,8 +72,9 @@
                 android:layout_height="wrap_content"
                 android:text="date news"
                 android:layout_marginTop="8dp"
-                android:textSize="10sp"
-                android:layout_marginBottom="8dp"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/imageNews"
                 app:layout_constraintTop_toBottomOf="@id/source_news"
@@ -84,7 +85,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="author news"
-                android:textSize="10sp"
+                android:textSize="12sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/imageNews"
                 app:layout_constraintTop_toTopOf="@id/dateNews"

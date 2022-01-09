@@ -25,6 +25,8 @@
         app:itemIconTint="@drawable/bottom_button_selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/design_default_color_primary"
+        app:itemTextColor="@color/light_green"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu" />
 

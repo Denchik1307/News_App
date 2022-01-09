@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import den.project.newsapp.R
 import den.project.newsapp.databinding.SingleNewsFragmentBinding
 import den.project.newsapp.presentation.NewsActivity
@@ -34,7 +35,12 @@ class SingleNewsFragment : Fragment(R.layout.single_news_fragment) {
         val singleNews = args.singleNewsUrl
         binding.webView.apply {
             webViewClient = WebViewClient()
-            loadUrl(singleNews.url)
+            singleNews.url?.let { loadUrl(it) }
+        }
+
+        binding.favoriteNews.setOnClickListener{
+            viewModel.saveNews(singleNews)
+            Snackbar.make(view,"News saved",Snackbar.LENGTH_SHORT).show()
         }
     }
 }
