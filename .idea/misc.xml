@@ -8,6 +8,8 @@
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_all_news.xml" value="0.2994791666666667" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_favorite_news.xml" value="0.2994791666666667" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_image_news.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_search_news.xml" value="0.2994791666666667" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_news.xml" value="0.27374872318692545" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/all_news.xml" value="0.27374872318692545" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/all_news_fragment.xml" value="0.1" />
@@ -16,6 +18,8 @@
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/news_pattern.xml" value="0.2264151024877837" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/search_news_fragment.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/single_news.xml" value="0.27374872318692545" />
+        <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/single_news_fragment.xml" value="0.2791666666666667" />
+        <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/layout/single_news_pattern.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/Denis/AndroidStudioProjects/NewsApp/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>
     </option>

@@ -31,5 +31,9 @@
     <fragment
         android:id="@+id/singleNewsFragment"
         android:name="den.project.newsapp.presentation.fragments.SingleNewsFragment"
-        android:label="SingleNewsFragment" />
+        android:label="SingleNewsFragment" >
+        <argument
+            android:name="singleNewsUrl"
+            app:argType="den.project.newsapp.models.Article" />
+    </fragment>
 </navigation>
