@@ -26,11 +26,10 @@ class NewsActivity : AppCompatActivity() {
         val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
-//        binding.bottomMenu.setupWithNavController(binding.newsNavHostFragment.findNavController())
-        setUpNavigation()
+        setUpBottomNavigation()
     }
 
-    fun setUpNavigation() {
+    fun setUpBottomNavigation() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment
         binding.bottomMenu.setupWithNavController(navHostFragment.navController)

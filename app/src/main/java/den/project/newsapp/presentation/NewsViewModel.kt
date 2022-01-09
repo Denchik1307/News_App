@@ -3,6 +3,7 @@ package den.project.newsapp.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import den.project.newsapp.models.Article
 import den.project.newsapp.models.NewsResponse
 import den.project.newsapp.repository.NewsRepository
 import den.project.newsapp.utils.Constants.Companion.COUNTRY
@@ -53,4 +54,10 @@ class NewsViewModel(
         }
         return Resource.Error(response.message())
     }
+
+    fun saveArticle(article: Article) = viewModelScope.launch {
+        newsRepository.upsert(article)
+    }
+
+    fun getSavedNews() = newsRepository.getSavedNews()
 }

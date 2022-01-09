@@ -32,9 +32,9 @@ class SingleNewsFragment : Fragment(R.layout.single_news_fragment) {
         viewModel = (activity as NewsActivity).viewModel
 
         val singleNews = args.singleNewsUrl
-//        binding.webView.apply {
-//            webViewClient = WebViewClient()
-//            loadUrl(singleNews.url)
-//        }
+        binding.webView.apply {
+            webViewClient = WebViewClient()
+            loadUrl(singleNews.url)
+        }
     }
 }

@@ -8,7 +8,6 @@
         android:id="@+id/recyclerFavoriteNews"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:itemCount="6"
-        tools:listitem="@layout/news_pattern" />
+        tools:item="@layout/single_news_fragment"/>
 
 </FrameLayout>

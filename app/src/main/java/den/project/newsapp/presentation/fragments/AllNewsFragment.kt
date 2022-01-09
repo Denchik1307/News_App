@@ -39,7 +39,7 @@ class AllNewsFragment : Fragment(R.layout.all_news_fragment) {
 
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
-                putSerializable("article", it)
+                putSerializable("singleNewsUrl", it)
             }
             findNavController().navigate(
                 R.id.action_allNewsFragment_to_singleNewsFragment,

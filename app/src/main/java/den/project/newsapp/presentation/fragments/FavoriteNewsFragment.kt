@@ -1,12 +1,10 @@
 package den.project.newsapp.presentation.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import den.project.newsapp.R
@@ -14,13 +12,12 @@ import den.project.newsapp.databinding.FavoriteNewsFragmentBinding
 import den.project.newsapp.presentation.NewsActivity
 import den.project.newsapp.presentation.NewsViewModel
 import den.project.newsapp.presentation.adapters.NewsAdapter
-import den.project.newsapp.utils.Resource
 
 class FavoriteNewsFragment : Fragment(R.layout.favorite_news_fragment) {
 
     lateinit var viewModel: NewsViewModel
     lateinit var binding: FavoriteNewsFragmentBinding
-    lateinit var favoriteNewsAdapter: NewsAdapter
+    lateinit var newsAdapter: NewsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +32,7 @@ class FavoriteNewsFragment : Fragment(R.layout.favorite_news_fragment) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
 
-        favoriteNewsAdapter.setOnItemClickListener {
+        newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
                 putSerializable("article", it)
             }
@@ -44,15 +41,27 @@ class FavoriteNewsFragment : Fragment(R.layout.favorite_news_fragment) {
                 bundle
             )
         }
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("singleNewsUrl", it)
+            }
+            findNavController().navigate(
+                R.id.action_allNewsFragment_to_singleNewsFragment,
+                bundle
+            )
+        }
     }
 
     private fun setupRecyclerView() {
-        favoriteNewsAdapter = NewsAdapter()
+        newsAdapter = NewsAdapter()
         binding.recyclerFavoriteNews.apply {
-            adapter = favoriteNewsAdapter
+            adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
         }
     }
+
+
 
 }
 

@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
 class SearchNewsFragment : Fragment(R.layout.search_news_fragment) {
 
     lateinit var viewModel: NewsViewModel
-    lateinit var serchNewsAdapter: NewsAdapter
+    lateinit var newsAdapter: NewsAdapter
     lateinit var binding: SearchNewsFragmentBinding
 
     override fun onCreateView(
@@ -44,7 +44,7 @@ class SearchNewsFragment : Fragment(R.layout.search_news_fragment) {
 
         setupRecyclerView()
 
-        serchNewsAdapter.setOnItemClickListener {
+        newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
                 putSerializable("article", it)
             }
@@ -67,6 +67,16 @@ class SearchNewsFragment : Fragment(R.layout.search_news_fragment) {
             }
         }
 
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("singleNewsUrl", it)
+            }
+            findNavController().navigate(
+                R.id.action_searchNewsFragment_to_singleNewsFragment,
+                bundle
+            )
+        }
+
 
         viewModel.searchNews.observe(viewLifecycleOwner, Observer
         { response ->
@@ -74,7 +84,7 @@ class SearchNewsFragment : Fragment(R.layout.search_news_fragment) {
                 is Resource.Success -> {
                     hideProgressBar()
                     response.data?.let { newsResponse ->
-                        serchNewsAdapter.differ.submitList(newsResponse.articles)
+                        newsAdapter.differ.submitList(newsResponse.articles)
                     }
                 }
                 is Resource.Error -> {
@@ -100,9 +110,9 @@ class SearchNewsFragment : Fragment(R.layout.search_news_fragment) {
     }
 
     private fun setupRecyclerView() {
-        serchNewsAdapter = NewsAdapter()
+        newsAdapter = NewsAdapter()
         binding.recyclerSearchNews.apply {
-            adapter = serchNewsAdapter
+            adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
         }
     }
