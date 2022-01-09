@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import den.project.newsapp.models.NewsResponse
 import den.project.newsapp.repository.NewsRepository
+import den.project.newsapp.utils.Constants.Companion.COUNTRY
 import den.project.newsapp.utils.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -14,13 +15,13 @@ class NewsViewModel(
 ) : ViewModel() {
 
     val allNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
-    var allNewsPage = 1
+    private var allNewsPage = 1
 
     init {
-        getAllNews("ru")
+        getAllNews(COUNTRY)
     }
 
-    fun getAllNews(countryCode: String) = viewModelScope.launch {
+    private fun getAllNews(countryCode: String) = viewModelScope.launch {
         allNews.postValue(Resource.Loading())
         val response = newsRepository.getAllNews(countryCode, allNewsPage)
         allNews.postValue(handleAllNewsResponse(response))

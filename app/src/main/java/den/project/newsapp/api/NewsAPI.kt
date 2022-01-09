@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface NewsAPI {
 
-    @GET("v2/top-headlines")
+    @GET("top-headlines")
     suspend fun getAllNews(
         @Query("country")
         countryCode: String = "us",
@@ -18,7 +18,7 @@ interface NewsAPI {
         apiKey: String = API_KEY
     ): Response<NewsResponse>
 
-    @GET("v2/everything")
+    @GET("everything")
     suspend fun searchNews(
         @Query("q")
         searchQuery: String,

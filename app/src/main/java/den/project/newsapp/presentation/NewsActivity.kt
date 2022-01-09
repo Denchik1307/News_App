@@ -3,11 +3,13 @@ package den.project.newsapp.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import den.project.newsapp.R
 import den.project.newsapp.databinding.ActivityNewsBinding
 import den.project.newsapp.db.ArticleDataBase
 import den.project.newsapp.repository.NewsRepository
+
 
 class NewsActivity : AppCompatActivity() {
 
@@ -24,8 +26,14 @@ class NewsActivity : AppCompatActivity() {
         val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
-        binding.bottomMenu.setupWithNavController(binding.newsNavHostFragment.findNavController())
+//        binding.bottomMenu.setupWithNavController(binding.newsNavHostFragment.findNavController())
+        setUpNavigation()
+    }
 
+    fun setUpNavigation() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment
+        binding.bottomMenu.setupWithNavController(navHostFragment.navController)
     }
 
 }
